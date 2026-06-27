@@ -345,6 +345,10 @@ nav.scrolled { background: rgba(26, 31, 46, 0.95); }
   0% { opacity: 0.8; transform: translateY(0) scale(1); }
   100% { opacity: 0; transform: translateY(-44px) scale(0.2); }
 }
+@keyframes howBubbleFloatLeft {
+  0% { opacity: 0.8; transform: translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateX(-44px) scale(0.2); }
+}
 .how-step {
   text-align: center;
   position: relative;
@@ -758,8 +762,39 @@ footer {
   .hero-content { padding: 100px 20px 60px; }
   .pain-grid { grid-template-columns: 1fr; gap: 16px; }
   .services-grid { grid-template-columns: 1fr; }
-  .how-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .how-track { display: none; }
+  .how-steps { grid-template-columns: 1fr; gap: 0; }
+  .how-track {
+    left: 28px;
+    right: auto;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
+    height: auto;
+  }
+  .how-track-fill {
+    width: 100%;
+    height: 0%;
+    right: auto; bottom: auto;
+  }
+  .how-sponge {
+    top: 0%;
+    left: -16px;
+    transform: translateY(-50%);
+  }
+  .how-step {
+    text-align: left;
+    padding: 20px 16px 20px 72px;
+    display: flex;
+    flex-direction: column;
+  }
+  .how-step-num {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    width: 48px; height: 48px;
+    font-size: var(--text-base);
+  }
+  .how-step { position: relative; }
   .ba-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .area-grid { grid-template-columns: 1fr; }
@@ -802,7 +837,7 @@ footer {
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1><img src="assets/logo.png" alt="Molinas" class="hero-logo"></h1>
-    <p class="hero-sub">Turnover cleaning that protects your 5-star rating, with photo proof after every single clean.</p>
+    <p class="hero-sub">Turnover cleaning for Airbnb and VRBO hosts who refuse to lose Superhost status. Photo proof after every clean, backup cleaner on every booking.</p>
     <a href="#quote" class="hero-cta">Request a Free Quote</a>
     <div class="hero-clock">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -816,7 +851,7 @@ footer {
   <div class="container">
     <div class="pain-header">
       <p class="section-label">Why Hosts Switch</p>
-      <h2>The Clock Doesn't Care That Your Cleaner Didn't Show</h2>
+      <h2>Your Cleaner No-Shows at Noon. Check-in Is at 4. Now What?</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
@@ -848,7 +883,7 @@ footer {
   <div class="container">
     <div class="services-header">
       <p class="section-label">Services</p>
-      <h2>Pick the Clean That Fits the Booking</h2>
+      <h2>Flat-Rate Turnovers That Pay for Themselves in Reviews</h2>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -856,7 +891,7 @@ footer {
         <div class="service-card-body">
           <div class="service-card-price">$120 - $180 <span>per turnover</span></div>
           <h3>Standard Turnover</h3>
-          <p>The everyday flip between guests. Your reliable baseline, 365 days a year.</p>
+          <p>The guest-ready flip. Full clean, every room, every surface. Your reliable baseline between back-to-back bookings, 365 days a year.</p>
           <ul>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full clean, all rooms</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Trash out, beds made</li>
@@ -871,7 +906,7 @@ footer {
         <div class="service-card-body">
           <div class="service-card-price">$200 - $300 <span>per turnover</span></div>
           <h3>Premium Turnover</h3>
-          <p>Everything in Standard, plus fresh linens and restocking. The guest walks into a hotel. You do nothing.</p>
+          <p>Everything in Standard, plus fresh linens, restocking, and staging. Your guest walks into a hotel experience. You check the photos from wherever you are.</p>
           <ul>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Everything in Standard</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fresh linen swap + laundry</li>
@@ -886,7 +921,7 @@ footer {
         <div class="service-card-body">
           <div class="service-card-price">$350+ <span>per clean</span></div>
           <h3>Deep Clean</h3>
-          <p>Baseboards, inside the fridge, behind the furniture. The spots a turnover skips. Run it monthly or before peak season.</p>
+          <p>Baseboards, inside the fridge, behind the furniture. The spots that turnovers skip but guests notice. Schedule monthly or before peak season to keep your listing fresh.</p>
           <ul>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Appliance interiors</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Baseboards + light fixtures</li>
@@ -1000,7 +1035,7 @@ footer {
   <div class="container">
     <div class="why-header">
       <p class="section-label">Why Molinas</p>
-      <h2>Reliability Is the Whole Product</h2>
+      <h2>Built for Hosts Who Manage from Anywhere</h2>
     </div>
     <div class="why-grid">
       <div class="why-card">
@@ -1042,8 +1077,8 @@ footer {
   <div class="container">
     <div class="guarantee-inner">
       <div class="guarantee-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-      <h2>The 5-Star Cleanliness Guarantee</h2>
-      <p>If a guest dings you on cleanliness after a Molinas turnover, we re-clean the property free and credit your next turnover. We carry the risk so you don't have to. Your rating is the business. We treat it like it's ours.</p>
+      <h2>The Superhost Protection Guarantee</h2>
+      <p>If a guest dings your cleanliness rating after a Molinas turnover, we re-clean the property free and credit your next turnover. Your 4.8+ rating is what keeps the algorithm working for you. One bad cleanliness review costs you weeks of bookings. We carry that risk so you never have to.</p>
     </div>
   </div>
 </section>
@@ -1168,7 +1203,7 @@ footer {
       </details>
       <details class="faq-item">
         <summary>How do I get pricing?</summary>
-        <p>Request a quote with your property details (address, beds, baths, frequency). You get a flat per-turnover rate with no surprises, no hidden fees, no surge pricing.</p>
+        <p>Request a quote with your property details (address, beds, baths, frequency). You get a flat per-turnover rate with no surprises, no hidden fees, no surge pricing. Most hosts tell us the cost of one cancelled booking covers a month of Molinas turnovers.</p>
       </details>
     </div>
   </div>
@@ -1177,8 +1212,8 @@ footer {
 <!-- FINAL CTA -->
 <section class="final-cta" id="quote">
   <div class="container">
-    <h2>Your Next Guest Checks In Soon. Be Ready.</h2>
-    <p>Get a flat per-turnover quote for your property today. Photo proof, backup cleaner, and a 5-star guarantee come standard.</p>
+    <h2>Stop Managing Cleaners. Start Scaling Properties.</h2>
+    <p>Get a flat per-turnover quote for your property in under 24 hours. Photo proof, backup cleaner, and the Superhost Protection Guarantee come standard on every booking.</p>
     <a href="tel:+15551234567" class="final-cta-btn">Request a Free Quote</a>
   </div>
 </section>
@@ -1362,18 +1397,26 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
   var steps = document.querySelectorAll('.how-step');
   var lastBubble = 0;
 
-  function spawnBubble(pct) {
+  function spawnBubble(pct, mobile) {
     var b = document.createElement('div');
     b.className = 'how-bubble';
     var sz = 5 + Math.floor(Math.random() * 8);
     b.style.width = sz + 'px';
     b.style.height = sz + 'px';
-    b.style.left = pct + '%';
-    b.style.top = (-sz - Math.floor(Math.random() * 8)) + 'px';
+    if (mobile) {
+      b.style.top = pct + '%';
+      b.style.left = (-sz - Math.floor(Math.random() * 8)) + 'px';
+      b.style.animationName = 'howBubbleFloatLeft';
+    } else {
+      b.style.left = pct + '%';
+      b.style.top = (-sz - Math.floor(Math.random() * 8)) + 'px';
+    }
     b.style.animationDuration = (0.8 + Math.random() * 0.6) + 's';
     track.appendChild(b);
     setTimeout(function() { if (b.parentNode) b.remove(); }, 1500);
   }
+
+  function isMobile() { return window.innerWidth < 768; }
 
   function onScroll() {
     var rect = howSection.getBoundingClientRect();
@@ -1381,9 +1424,19 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
     var scrolled = vh - rect.top;
     var total = vh + rect.height * 0.5;
     var p = Math.max(0, Math.min(1, scrolled / total));
+    var mobile = isMobile();
 
-    trackFill.style.width = (p * 100) + '%';
-    sponge.style.left = (p * 100) + '%';
+    if (mobile) {
+      trackFill.style.width = '';
+      trackFill.style.height = (p * 100) + '%';
+      sponge.style.left = '';
+      sponge.style.top = (p * 100) + '%';
+    } else {
+      trackFill.style.height = '';
+      trackFill.style.width = (p * 100) + '%';
+      sponge.style.top = '';
+      sponge.style.left = (p * 100) + '%';
+    }
 
     var stepCount = steps.length;
     for (var i = 0; i < stepCount; i++) {
@@ -1398,8 +1451,8 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
     if (p > 0.02 && p < 0.98) {
       var now = Date.now();
       if (now - lastBubble > 120) {
-        spawnBubble(p * 100);
-        if (Math.random() > 0.5) spawnBubble(p * 100 - 1 + Math.random() * 2);
+        spawnBubble(p * 100, mobile);
+        if (Math.random() > 0.5) spawnBubble(p * 100 - 1 + Math.random() * 2, mobile);
         lastBubble = now;
       }
     }
