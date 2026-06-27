@@ -205,6 +205,7 @@ nav.scrolled { background: rgba(26, 31, 46, 0.95); }
   background: var(--clean-white);
 }
 .services-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.services-sub { color: var(--slate); font-size: var(--text-sm); line-height: 1.6; margin-top: 12px; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -650,6 +651,177 @@ nav.scrolled { background: rgba(26, 31, 46, 0.95); }
 }
 .final-cta-btn:hover { background: #1D4ED8; }
 
+/* QUOTE FORM */
+.quote-form-section {
+  padding: 100px 0;
+  background: var(--clean-white);
+}
+.quote-form-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.quote-form-header p.section-label { margin-bottom: 12px; }
+.quote-form-header h2 { margin-bottom: 12px; }
+.quote-form-header .quote-sub {
+  color: var(--slate);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.quote-form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-white);
+  border-radius: 16px;
+  border: 1px solid var(--rule-gray);
+  padding: 48px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+.qf-group {
+  margin-bottom: 36px;
+}
+.qf-group:last-child { margin-bottom: 0; }
+.qf-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--midnight);
+  margin-bottom: 6px;
+}
+.qf-hint {
+  color: var(--slate);
+  font-size: var(--text-xs);
+  margin-bottom: 14px;
+}
+.qf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.qf-chip {
+  padding: 10px 20px;
+  border: 1.5px solid var(--rule-gray);
+  border-radius: 10px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--midnight);
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  background: var(--card-white);
+}
+.qf-chip:hover {
+  border-color: var(--signal-blue);
+  background: rgba(37,99,235,0.04);
+}
+.qf-chip.active {
+  border-color: var(--signal-blue);
+  background: var(--signal-blue-light);
+  color: var(--signal-blue);
+  font-weight: 600;
+}
+.qf-chip.active::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--signal-blue);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.qf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.qf-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.qf-field { display: flex; flex-direction: column; }
+.qf-field label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.qf-field input,
+.qf-field select,
+.qf-field textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--rule-gray);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--midnight);
+  background: var(--card-white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.qf-field input:focus,
+.qf-field select:focus,
+.qf-field textarea:focus {
+  border-color: var(--signal-blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.qf-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.qf-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+.qf-divider {
+  height: 1px;
+  background: var(--rule-gray);
+  margin: 36px 0;
+}
+.qf-submit {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--signal-blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 36px;
+}
+.qf-submit:hover { background: #1D4ED8; }
+.qf-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+.qf-success.show { display: block; }
+.qf-success svg {
+  width: 64px; height: 64px;
+  color: var(--ready-green);
+  margin-bottom: 16px;
+}
+.qf-success h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: 12px;
+}
+.qf-success p {
+  color: var(--slate);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
 /* FOOTER */
 footer {
   padding: 48px 0 24px;
@@ -801,6 +973,10 @@ footer {
   .reviews-grid { grid-template-columns: 1fr; }
   .mobile-sticky { display: flex; }
   .addons { flex-direction: column; align-items: center; }
+  .quote-form-card { padding: 28px 20px; }
+  .qf-row, .qf-row-3 { grid-template-columns: 1fr; }
+  .qf-chips { gap: 8px; }
+  .qf-chip { padding: 10px 16px; font-size: 13px; }
   .footer-inner { flex-direction: column; }
   .exit-popup-card { padding: 32px 24px; }
 }
@@ -883,13 +1059,13 @@ footer {
   <div class="container">
     <div class="services-header">
       <p class="section-label">Services</p>
-      <h2>Flat-Rate Turnovers That Pay for Themselves in Reviews</h2>
+      <h2>Every Property Gets a Custom Quote</h2>
+      <p class="services-sub">Tell us about your property and we build your pricing around it. No templates, no surprises.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-card-img"><img src="assets/kitchen-after.webp" alt="Standard turnover clean result" loading="lazy"></div>
         <div class="service-card-body">
-          <div class="service-card-price">$120 - $180 <span>per turnover</span></div>
           <h3>Standard Turnover</h3>
           <p>The guest-ready flip. Full clean, every room, every surface. Your reliable baseline between back-to-back bookings, 365 days a year.</p>
           <ul>
@@ -898,13 +1074,12 @@ footer {
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Surfaces sanitized</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>30+ photos sent on completion</li>
           </ul>
-          <a href="#quote" class="service-card-cta">Get a Quote</a>
+          <a href="#quote" class="service-card-cta">Get Your Quote</a>
         </div>
       </div>
       <div class="service-card featured">
         <div class="service-card-img"><img src="assets/bedroom-after.webp" alt="Premium turnover clean result" loading="lazy"></div>
         <div class="service-card-body">
-          <div class="service-card-price">$200 - $300 <span>per turnover</span></div>
           <h3>Premium Turnover</h3>
           <p>Everything in Standard, plus fresh linens, restocking, and staging. Your guest walks into a hotel experience. You check the photos from wherever you are.</p>
           <ul>
@@ -913,13 +1088,12 @@ footer {
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Consumables restocked</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Staged for arrival</li>
           </ul>
-          <a href="#quote" class="service-card-cta">Get a Quote</a>
+          <a href="#quote" class="service-card-cta">Get Your Quote</a>
         </div>
       </div>
       <div class="service-card">
         <div class="service-card-img"><img src="assets/bathroom-after.webp" alt="Deep clean result" loading="lazy"></div>
         <div class="service-card-body">
-          <div class="service-card-price">$350+ <span>per clean</span></div>
           <h3>Deep Clean</h3>
           <p>Baseboards, inside the fridge, behind the furniture. The spots that turnovers skip but guests notice. Schedule monthly or before peak season to keep your listing fresh.</p>
           <ul>
@@ -928,14 +1102,9 @@ footer {
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Behind + under furniture</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Window tracks + vents</li>
           </ul>
-          <a href="#quote" class="service-card-cta">Get a Quote</a>
+          <a href="#quote" class="service-card-cta">Get Your Quote</a>
         </div>
       </div>
-    </div>
-    <div class="addons">
-      <div class="addon">Linen Service <span class="addon-price">+$45</span></div>
-      <div class="addon">Restocking <span class="addon-price">+$30</span></div>
-      <div class="addon">Hot Tub + Pool Deck <span class="addon-price">+$60</span></div>
     </div>
   </div>
 </section>
@@ -1209,12 +1378,190 @@ footer {
   </div>
 </section>
 
+<!-- QUOTE FORM -->
+<section class="quote-form-section" id="quote">
+  <div class="container">
+    <div class="quote-form-header">
+      <p class="section-label">Get a Quote</p>
+      <h2>Get a Personalized Cleaning Quote</h2>
+      <p class="quote-sub">Every property is different. Tell us about yours and we will send you a custom quote within 24 hours.</p>
+    </div>
+    <div class="quote-form-card">
+      <form id="quoteForm">
+        <div class="qf-group">
+          <p class="qf-label">Choose your cleaning service(s) *</p>
+          <p class="qf-hint">Select at least one service for an accurate quote.</p>
+          <div class="qf-chips" data-name="services" data-multi="true">
+            <div class="qf-chip" data-value="standard-turnover">Standard Turnover</div>
+            <div class="qf-chip" data-value="premium-turnover">Premium Turnover</div>
+            <div class="qf-chip" data-value="deep-clean">Deep Clean</div>
+            <div class="qf-chip" data-value="move-in-out">Move-In / Move-Out</div>
+            <div class="qf-chip" data-value="linen-service">Linen Service Only</div>
+            <div class="qf-chip" data-value="restocking">Restocking Only</div>
+          </div>
+        </div>
+
+        <div class="qf-group">
+          <p class="qf-label">Add-ons (optional)</p>
+          <p class="qf-hint">Select any extras you need for your property.</p>
+          <div class="qf-chips" data-name="addons" data-multi="true">
+            <div class="qf-chip" data-value="hot-tub-pool">Hot Tub / Pool Deck</div>
+            <div class="qf-chip" data-value="inside-fridge">Inside Fridge</div>
+            <div class="qf-chip" data-value="inside-oven">Inside Oven</div>
+            <div class="qf-chip" data-value="interior-windows">Interior Windows</div>
+            <div class="qf-chip" data-value="laundry">Laundry (Wash + Fold)</div>
+            <div class="qf-chip" data-value="patio-balcony">Patio / Balcony</div>
+            <div class="qf-chip" data-value="garage">Garage Sweep</div>
+          </div>
+        </div>
+
+        <div class="qf-divider"></div>
+
+        <div class="qf-group">
+          <p class="qf-label">Property Details *</p>
+          <div class="qf-row" style="margin-bottom:16px">
+            <div class="qf-field">
+              <label for="qf-type">Property Type</label>
+              <select id="qf-type" required>
+                <option value="" disabled selected>Select type</option>
+                <option>Condo / Apartment</option>
+                <option>Single-Family Home</option>
+                <option>Townhouse</option>
+                <option>Villa / Estate</option>
+                <option>Multi-Unit Complex</option>
+              </select>
+            </div>
+            <div class="qf-field">
+              <label for="qf-sqft">Approx. Square Feet (optional)</label>
+              <input type="text" id="qf-sqft" placeholder="e.g. 1,800">
+            </div>
+          </div>
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qf-beds">Bedrooms</label>
+              <select id="qf-beds" required>
+                <option value="" disabled selected>Select</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6+</option>
+              </select>
+            </div>
+            <div class="qf-field">
+              <label for="qf-baths">Bathrooms</label>
+              <select id="qf-baths" required>
+                <option value="" disabled selected>Select</option>
+                <option>1</option><option>1.5</option><option>2</option>
+                <option>2.5</option><option>3</option><option>3.5</option><option>4+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="qf-group">
+          <p class="qf-label">Location *</p>
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qf-address">Property Address</label>
+              <input type="text" id="qf-address" placeholder="Street address or area" required>
+            </div>
+            <div class="qf-field">
+              <label for="qf-zip">Zip Code</label>
+              <input type="text" id="qf-zip" placeholder="e.g. 34102" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="qf-divider"></div>
+
+        <div class="qf-group">
+          <p class="qf-label">Scheduling</p>
+          <div class="qf-row-3" style="margin-bottom:16px">
+            <div class="qf-field">
+              <label for="qf-freq">Frequency</label>
+              <select id="qf-freq">
+                <option value="" disabled selected>Select</option>
+                <option>One-Time</option>
+                <option>Per Booking (every turnover)</option>
+                <option>Weekly</option>
+                <option>Bi-Weekly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <div class="qf-field">
+              <label for="qf-date">Preferred Start Date</label>
+              <input type="date" id="qf-date">
+            </div>
+            <div class="qf-field">
+              <label for="qf-time">Preferred Time Window</label>
+              <select id="qf-time">
+                <option value="" disabled selected>Select</option>
+                <option>Morning (8 - 11 AM)</option>
+                <option>Midday (11 AM - 2 PM)</option>
+                <option>Afternoon (2 - 5 PM)</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="qf-divider"></div>
+
+        <div class="qf-group">
+          <p class="qf-label">Contact Information *</p>
+          <div class="qf-row" style="margin-bottom:16px">
+            <div class="qf-field">
+              <label for="qf-name">Full Name</label>
+              <input type="text" id="qf-name" placeholder="Your name" required>
+            </div>
+            <div class="qf-field">
+              <label for="qf-phone">Phone</label>
+              <input type="tel" id="qf-phone" placeholder="(555) 123-4567" required>
+            </div>
+          </div>
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qf-email">Email</label>
+              <input type="email" id="qf-email" placeholder="you@email.com" required>
+            </div>
+            <div class="qf-field">
+              <label for="qf-properties">Number of Properties</label>
+              <select id="qf-properties">
+                <option value="" disabled selected>Select</option>
+                <option>1</option>
+                <option>2 - 5</option>
+                <option>6 - 10</option>
+                <option>11 - 25</option>
+                <option>25+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="qf-group">
+          <p class="qf-label">Notes / Special Requests</p>
+          <p class="qf-hint">Access instructions, property quirks, specific priorities, anything we should know.</p>
+          <div class="qf-field">
+            <textarea id="qf-notes" placeholder="e.g. Lockbox code needed, thermostat set to 72, extra towels in master bath..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="qf-submit">Get My Personalized Quote</button>
+      </form>
+
+      <div class="qf-success" id="quoteSuccess">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3>Quote Request Received</h3>
+        <p>We will review your property details and send a personalized quote within 24 hours. Check your email or expect a call from our team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
-<section class="final-cta" id="quote">
+<section class="final-cta">
   <div class="container">
     <h2>Stop Managing Cleaners. Start Scaling Properties.</h2>
-    <p>Get a flat per-turnover quote for your property in under 24 hours. Photo proof, backup cleaner, and the Superhost Protection Guarantee come standard on every booking.</p>
-    <a href="tel:+15551234567" class="final-cta-btn">Request a Free Quote</a>
+    <p>Photo proof, backup cleaner, and the Superhost Protection Guarantee come standard on every booking.</p>
+    <a href="#quote" class="final-cta-btn">Get Your Personalized Quote</a>
   </div>
 </section>
 
@@ -1478,6 +1825,37 @@ document.querySelectorAll('.pain-card, .service-card, .how-step, .ba-card, .why-
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+
+// QUOTE FORM CHIP SELECTION
+document.querySelectorAll('.qf-chips').forEach(function(group) {
+  var isMulti = group.dataset.multi === 'true';
+  group.querySelectorAll('.qf-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      if (isMulti) {
+        chip.classList.toggle('active');
+      } else {
+        group.querySelectorAll('.qf-chip').forEach(function(c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+      }
+    });
+  });
+});
+
+// QUOTE FORM SUBMISSION
+var quoteForm = document.getElementById('quoteForm');
+if (quoteForm) {
+  quoteForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var serviceChips = document.querySelectorAll('[data-name="services"] .qf-chip.active');
+    if (serviceChips.length === 0) {
+      alert('Please select at least one cleaning service.');
+      return;
+    }
+    quoteForm.style.display = 'none';
+    document.getElementById('quoteSuccess').classList.add('show');
+    document.getElementById('quote').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 </script>
 </body>
 </html>
