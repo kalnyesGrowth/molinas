@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Molinas | Airbnb Turnover Cleaning in Naples &amp; Orlando</title>
 <meta name="description" content="Professional turnover cleaning for Airbnb and VRBO hosts in Naples and Orlando FL. Photo proof after every clean. 5-star cleanliness guarantee.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data:; style-src 'self' 'unsafe-inline' https://api.fontshare.com; img-src 'self' https://images.pexels.com data:; font-src 'self' https://api.fontshare.com https://cdn.fontshare.com data:; connect-src 'self' https://boddsbxlaytcrkpuckyn.functions.supabase.co https://kg-dashboard.vercel.app; script-src 'self' 'unsafe-inline' https://kg-dashboard.vercel.app; media-src 'self' data:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:title" content="Molinas | Airbnb Turnover Cleaning in Naples &amp; Orlando">
 <meta property="og:description" content="30+ photos after every turnover, backup cleaner on every booking, and the Superhost Protection Guarantee. Serving Naples, Marco Island, Orlando, and Kissimmee.">
 <meta property="og:type" content="website">
@@ -1564,17 +1567,17 @@ footer {
         <div class="qf-row" style="margin-bottom:16px">
           <div class="qf-field">
             <label for="est-name" data-i18n="est_name_label">Full Name</label>
-            <input type="text" id="est-name" placeholder="Your name" required>
+            <input type="text" id="est-name" placeholder="Your name" required maxlength="200" autocomplete="name">
           </div>
           <div class="qf-field">
             <label for="est-phone" data-i18n="est_phone_label">Phone</label>
-            <input type="tel" id="est-phone" placeholder="(786) 201-9945" required>
+            <input type="tel" id="est-phone" placeholder="(786) 201-9945" required maxlength="20" autocomplete="tel">
           </div>
         </div>
         <div class="qf-row">
           <div class="qf-field">
             <label for="est-email" data-i18n="est_email_label">Email</label>
-            <input type="email" id="est-email" placeholder="you@email.com" required>
+            <input type="email" id="est-email" placeholder="you@email.com" required maxlength="254" autocomplete="email">
           </div>
           <div class="qf-field">
             <label for="est-properties" data-i18n="est_props_label">Number of Properties</label>
@@ -1629,7 +1632,7 @@ footer {
         </div>
         <div class="qf-field" style="margin-top:16px">
           <label for="est-notes" data-i18n="est_notes_label">Notes / Special Requests</label>
-          <textarea id="est-notes" placeholder="Lockbox code, thermostat setting, property quirks..." rows="3"></textarea>
+          <textarea id="est-notes" placeholder="Lockbox code, thermostat setting, property quirks..." rows="3" maxlength="2000"></textarea>
         </div>
         <button type="button" class="qf-submit" id="estSubmitBtn" data-i18n="est_submit_btn">Submit Request</button>
         <button type="button" class="est-skip" id="estSkipBtn" data-i18n="est_skip">Skip, just send the quote</button>
@@ -1994,7 +1997,11 @@ document.querySelectorAll('.pain-card, .service-card, .how-step, .ba-card, .why-
     showStep(3);
   });
 
+  var _lastSubmit = 0;
   function submitLead() {
+    var now = Date.now();
+    if (now - _lastSubmit < 30000) return;
+    _lastSubmit = now;
     var addons = [];
     document.querySelectorAll('[data-name="est-addons"] .qf-chip.active').forEach(function(c) { addons.push(c.dataset.value); });
     estimateData.addons = addons;
